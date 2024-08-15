@@ -1,0 +1,60 @@
+/* auto_list.css */
+
+/* Estilos para el contenedor principal */
+.container-list {
+    max-width: 800px; /* Ajuste del ancho máximo para centrar la lista */
+    margin: 40px auto; /* Centramos el contenedor */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Estilos para el título */
+.container-list h1 {
+    font-size: 2.2em;
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilos para la lista de autos */
+.container-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container-list ul li {
+    background-color: #f1f5f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-list ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.container-list ul li a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.container-list ul li a:hover {
+    color: #1f76e8;
+}
+
+/* Estilos adicionales para mejorar la experiencia de usuario */
+.container-list ul li:before {
+    content: "🚗"; /* Icono de coche para darle un toque visual */
+    margin-right: 10px;
+}

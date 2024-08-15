@@ -1,0 +1,23 @@
+{% extends "gestion/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Inicio - Concesionaria" %}{% endblock %}
+
+{% block content %}
+<div class="container-index">
+    <h1>{% trans "Bienvenido a la Concesionaria" %}</h1>
+
+    {% if user.is_authenticated %}
+        <p class="welcome-message">{% trans "Hola," %} {{ user.username }}!</p>
+        <p>{% trans "Gracias por iniciar sesión." %}</p>
+        {% if user.is_staff %}
+            <p class="admin-message">{% trans "Eres un administrador. Usa las opciones de navegación para gestionar autos y promociones." %}</p>
+        {% else %}
+            <p class="user-message">{% trans "Explora nuestra colección de autos." %}</p>
+        {% endif %}
+    {% else %}
+        <p>{% trans "Por favor," %} <a href="{% url 'login' %}">{% trans "inicia sesión" %}</a> {% trans "o" %} <a href="{% url 'registro' %}">{% trans "regístrate" %}</a> {% trans "para acceder a más funciones." %}</p>
+        <a class="custom-button" href="{% url 'registro' %}">{% trans "Regístrate" %}</a>
+    {% endif %}
+</div>
+{% endblock %}

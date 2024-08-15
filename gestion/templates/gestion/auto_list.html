@@ -1,0 +1,24 @@
+{% extends "gestion/base.html" %}
+
+{% block title %}Lista de Autos{% endblock %}
+
+{% block content %}
+<div class="container-list">
+    <h1>Lista de Autos</h1>
+    <ul>
+        {% for auto_info in autos_con_promociones %}
+            <li>
+                <a href="{% url 'auto_detail' auto_info.auto.pk %}">{{ auto_info.auto.marca }} {{ auto_info.auto.modelo }} ({{ auto_info.auto.anio }})</a>
+                <div class="price-container">
+                    {% if auto_info.promocion %}
+                        <span class="original-price">{{ auto_info.auto.precio }}</span>
+                        <span class="promo-price">{{ auto_info.promocion.precio_promocional }}</span>
+                    {% else %}
+                        <span>{{ auto_info.auto.precio }}</span>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

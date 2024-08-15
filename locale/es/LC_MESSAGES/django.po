@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-15 16:54-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+#: concesionaria/settings.py:95
+msgid "English"
+msgstr ""
+
+#: concesionaria/settings.py:96
+msgid "Español"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:24
+msgid "Inicio"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:25
+msgid "Ver autos"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:28
+msgid "Agregar auto"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:29
+msgid "Gestionar promociones"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:31
+msgid "Mi perfil"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:32
+msgid "Cerrar sesión"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:34
+msgid "Iniciar sesión"
+msgstr ""
+
+#: gestion/templates/gestion/base.html:35
+msgid "Registrarse"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:4
+msgid "Inicio - Concesionaria"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:8
+msgid "Bienvenido a la Concesionaria"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:11
+msgid "Hola,"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:12
+msgid "Gracias por iniciar sesión."
+msgstr ""
+
+#: gestion/templates/gestion/index.html:14
+msgid ""
+"Eres un administrador. Usa las opciones de navegación para gestionar autos y "
+"promociones."
+msgstr ""
+
+#: gestion/templates/gestion/index.html:16
+msgid "Explora nuestra colección de autos."
+msgstr ""
+
+#: gestion/templates/gestion/index.html:19
+msgid "Por favor,"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:19
+msgid "inicia sesión"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:19
+msgid "o"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:19
+msgid "regístrate"
+msgstr ""
+
+#: gestion/templates/gestion/index.html:19
+msgid "para acceder a más funciones."
+msgstr ""
+
+#: gestion/templates/gestion/index.html:20
+msgid "Regístrate"
+msgstr ""

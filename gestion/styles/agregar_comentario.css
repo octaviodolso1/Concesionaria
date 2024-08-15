@@ -1,0 +1,87 @@
+/* agregar_comentario.css */
+
+/* Contenedor principal */
+.container-comment {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo del título */
+.container-comment h1 {
+    font-size: 2em;
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 10px;
+}
+
+/* Estilo del formulario */
+.container-comment form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-comment form p {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.container-comment input[type="text"],
+.container-comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.container-comment button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.container-comment button:hover {
+    background-color: #1f76e8;
+}
+
+/* Enlace de cancelación */
+.container-comment a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.container-comment a:hover {
+    color: #1f76e8;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container-comment {
+    animation: fadeIn 0.5s ease-in-out;
+}

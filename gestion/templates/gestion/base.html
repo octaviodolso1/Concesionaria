@@ -1,0 +1,45 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Concesionaria{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'registro.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auto_list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auto_detail.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'agregar_comentario.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'eliminar_comentario.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'auto_form.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'lista_promociones.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'agregar_promocion.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'editar_promocion.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'editar_comentario.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'responder_comentario.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">{% trans "Inicio" %}</a></li>
+            <li><a href="{% url 'auto_list' %}">{% trans "Ver autos" %}</a></li>
+            {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                    <li><a href="{% url 'auto_add' %}">{% trans "Agregar auto" %}</a></li>
+                    <li><a href="{% url 'gestion_promociones' %}">{% trans "Gestionar promociones" %}</a></li>
+                {% endif %}
+                <li><a href="{% url 'perfil_usuario' %}">{% trans "Mi perfil" %}</a></li>
+                <li><a href="{% url 'logout' %}">{% trans "Cerrar sesión" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">{% trans "Iniciar sesión" %}</a></li>
+                <li><a href="{% url 'registro' %}">{% trans "Registrarse" %}</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

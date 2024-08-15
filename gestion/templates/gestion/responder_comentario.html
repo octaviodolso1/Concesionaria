@@ -1,0 +1,22 @@
+{% extends "gestion/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Responder Comentario</h1>
+    
+    <div class="comment-section">
+        <p><strong>{{ comentario.cliente.username }}:</strong> {{ comentario.comentario }}</p>
+        <p><em>{{ comentario.fecha }}</em></p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Responder</button>
+    </form>
+    
+    <a href="{% url 'auto_detail' comentario.auto.pk %}" class="button">Cancelar</a>
+</div>
+{% endblock %}

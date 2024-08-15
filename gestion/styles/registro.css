@@ -1,0 +1,81 @@
+/* registro.css */
+
+/* Estilos para el contenedor del formulario de registro */
+.container-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    text-align: left;
+}
+
+.container-form h2 {
+    font-size: 2em;
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 10px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilos para los elementos del formulario */
+.container-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form form p {
+    margin-bottom: 15px;
+}
+
+.container-form form label {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.container-form form input[type="text"],
+.container-form form input[type="email"],
+.container-form form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f1f5f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-form form input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+/* Botón personalizado para el formulario */
+.custom-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4);
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.custom-button:hover {
+    background-color: #011e44;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(59, 130, 246, 0.6);
+}

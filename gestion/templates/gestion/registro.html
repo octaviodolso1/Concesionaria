@@ -1,0 +1,14 @@
+{% extends "gestion/base.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<div class="container-form">
+    <h2>Registro de Usuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="custom-button">Registrarse</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "gestion/base.html" %}
+
+{% block content %}
+<div class="container-comment">
+    <h1>Agregar Comentario sobre {{ auto.marca }} {{ auto.modelo }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar Comentario</button>
+    </form>
+    <a href="{% url 'auto_detail' auto.pk %}">Cancelar</a>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "gestion/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Editar Promoción</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="{% url 'lista_promociones' %}" class="button">Cancelar</a>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+/* Estilo para la página de eliminar comentario */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-group button, .button-group a.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-group a.button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.button-group a.button:hover {
+    background-color: #5a6268;
+}
+
+.button-group button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.button-group button:hover {
+    background-color: #c82333;
+}

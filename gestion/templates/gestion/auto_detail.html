@@ -1,0 +1,79 @@
+{% extends "gestion/base.html" %}
+
+{% block content %}
+<div class="container-detail">
+    <h1>{{ auto.marca }} {{ auto.modelo }} ({{ auto.anio }})</h1>
+    
+    <div class="price-section">
+        Precio: 
+        {% if promocion %}
+            <span class="original-price">{{ auto.precio }}</span>
+            <span class="promo-price">{{ promocion.precio_promocional }}</span> (En Promoción)
+        {% else %}
+            {{ auto.precio }}
+        {% endif %}
+    </div>
+    
+    <p>Kilometraje: {{ auto.kilometraje }}</p>
+    <p>Estado: {{ auto.estado }}</p>
+    
+    {% if auto.imagen %}
+        <img src="{{ auto.imagen.url }}" alt="Imagen del auto">
+    {% endif %}
+
+    {% if user.is_staff %}
+        <div class="admin-actions">
+            <a href="{% url 'auto_edit' auto.pk %}" class="button">Editar Auto</a>
+            <form method="post" action="{% url 'auto_delete' auto.pk %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="button delete-button">Eliminar Auto</button>
+            </form>
+        </div>
+    {% endif %}
+
+    <div class="comments-section">
+        <h2>Comentarios</h2>
+        {% for comentario in auto.comentario_set.all %}
+            <div class="comment">
+                <p><strong>{{ comentario.cliente.username }}:</strong> {{ comentario.comentario }}</p>
+                <p><em>{{ comentario.fecha }}</em></p>
+                
+                {% if comentario.respuesta_set.all %}
+                    <div class="responses">
+                        <h3>Respuestas:</h3>
+                        {% for respuesta in comentario.respuesta_set.all %}
+                            <div class="response">
+                                <p><strong>{{ respuesta.autor.username }}:</strong> {{ respuesta.respuesta }}</p>
+                                <p><em>{{ respuesta.fecha }}</em></p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div class="comment-actions">
+                    {% if comentario.cliente == user %}
+                        <a href="{% url 'editar_comentario' comentario.pk %}" class="edit-link">Editar</a>
+                    {% endif %}
+                    {% if user.is_staff or comentario.cliente == user %}
+                        <a href="{% url 'eliminar_comentario' comentario.pk %}" class="delete-link">Eliminar</a>
+                    {% endif %}
+                    {% if user.is_staff %}
+                        <a href="{% url 'responder_comentario' comentario.pk %}" class="respond-link">Responder</a>
+                    {% endif %}
+                </div>
+            </div>
+            <hr>
+        {% empty %}
+            <p>No hay comentarios aún. ¡Sé el primero en comentar!</p>
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'agregar_comentario' auto.pk %}" class="button">Agregar un comentario</a>
+        {% else %}
+            <p><a href="{% url 'login' %}" class="login-link">Inicia sesión</a> para agregar un comentario.</p>
+        {% endif %}
+    </div>
+
+    <a href="{% url 'auto_list' %}" class="button back-button">Volver a la lista</a>
+</div>
+{% endblock %}
